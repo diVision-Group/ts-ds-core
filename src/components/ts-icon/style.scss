@@ -1,0 +1,32 @@
+@import "../../styles/tokens.scss";
+
+.ts-icon {
+  $self: &;
+  display: block;
+  color: black;
+
+  &--small {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--medium {
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &--large {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &--inverse {
+    color: white;
+  }
+}

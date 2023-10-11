@@ -1,0 +1,313 @@
+@import "../../styles/tokens.scss";
+
+.ts-button {
+  $self: &;
+  font-family: $font-family-01, sans-serif !important;
+  font-size: $font-size-xxs !important;
+  line-height: $line-height-default !important;
+  @include motion-token(switch-slow, "&:hover");
+
+  &--primary {
+    #{$self}__button {
+      color: $brand-color-pink-02;
+      background-color: transparent;
+      border: 2px solid $brand-color-pink-01;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $brand-color-pink-01;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--secondary {
+    #{$self}__button {
+      color: $brand-color-blue-01;
+      background-color: transparent;
+      border: 2px solid $brand-color-blue-pure;
+
+      &:hover {
+        color: $brand-color-blue-01;
+        background-color: $brand-color-blue-pure;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--danger {
+    #{$self}__button {
+      color: $feedback-color-warning-01;
+      background-color: transparent;
+      border: 2px solid $feedback-color-warning-pure;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-warning-pure;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--success {
+    #{$self}__button {
+      color: $feedback-color-success-02;
+      background-color: transparent;
+      border: 2px solid $feedback-color-success-pure;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-success-pure;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--warning {
+    #{$self}__button {
+      color: darkred;
+      background-color: transparent;
+      border: 2px solid orangered;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: darkorange;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--inverse {
+    #{$self}__button {
+      color: $brand-color-blue-01;
+      background-color: $brand-color-blue-pure;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $brand-color-blue-01;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--secondary {
+      color: $brand-color-blue-02;
+      background-color: $brand-color-pink-01;
+      border: none;
+
+      &:hover {
+        color: $brand-color-blue-02;
+        background-color: $brand-color-pink-pure;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--danger {
+      color: $brand-color-blue-02;
+      background-color: $feedback-color-warning-pure;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-warning-01;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--success {
+      color: $brand-color-blue-02;
+      background-color: $feedback-color-success-pure;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-success-01;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--warning {
+      color: $brand-color-blue-02;
+      background-color: orange;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: orangered;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--loading {
+    #{$self}__button {
+      position: relative;
+      padding-left: $spacing-size-xxxs;
+      text-align: left;
+      pointer-events: none;
+      cursor: none;
+
+      &::after {
+        content: "";
+        left: 70%;
+        top: calc(35% - 1px);
+        display: block;
+        margin: auto;
+        position: absolute;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+        animation: spin 4s linear infinite;
+      }
+    }
+
+    #{$self}__button--primary {
+      color: $brand-color-pink-02;
+      &::after {
+        border-top: 2px solid $brand-color-pink-02;
+        border-bottom: 2px solid $brand-color-pink-02;
+      }
+
+      &.ts-button__button--inverse {
+        color: $brand-color-blue-01;
+        &::after {
+          border-top: 2px solid $brand-color-blue-01;
+          border-bottom: 2px solid $brand-color-blue-01;
+        }
+      }
+    }
+
+    #{$self}__button--secondary {
+      color: $brand-color-blue-01;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid $brand-color-blue-01;
+        border-bottom: 2px solid $brand-color-blue-01;
+      }
+
+      &.ts-button__button--inverse {
+        color: $brand-color-blue-01;
+        &::after {
+          border-top: 2px solid $brand-color-blue-01;
+          border-bottom: 2px solid $brand-color-blue-01;
+        }
+      }
+    }
+
+    #{$self}__button--danger {
+      color: $feedback-color-warning-01;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid $feedback-color-warning-01;
+        border-bottom: 2px solid $feedback-color-warning-01;
+      }
+
+      &.ts-button__button--inverse {
+        color: $neutral-elements-01;
+        &::after {
+          border-top: 2px solid $neutral-elements-01;
+          border-bottom: 2px solid $neutral-elements-01;
+        }
+      }
+    }
+
+    #{$self}__button--success {
+      color: $feedback-color-success-02;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid $feedback-color-success-02;
+        border-bottom: 2px solid $feedback-color-success-02;
+      }
+
+      &.ts-button__button--inverse {
+        color: $neutral-elements-01;
+        &::after {
+          border-top: 2px solid $neutral-elements-01;
+          border-bottom: 2px solid $neutral-elements-01;
+        }
+      }
+    }
+
+    #{$self}__button--warning {
+      color: darkred;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid orangered;
+        border-bottom: 2px solid orangered;
+      }
+
+      &.ts-button__button--inverse {
+        color: $neutral-elements-01;
+        &::after {
+          border-top: 2px solid $neutral-elements-01;
+          border-bottom: 2px solid $neutral-elements-01;
+        }
+      }
+    }
+  }
+
+  &--flat {
+    #{$self}__button {
+      border-radius: $border-radius-none;
+    }
+  }
+
+  &--rounded {
+    #{$self}__button {
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &--small {
+    #{$self}__button {
+      width: 115px;
+      height: 35px;
+    }
+  }
+
+  &--medium {
+    #{$self}__button {
+      width: 120px;
+      height: 40px;
+    }
+  }
+
+  &--large {
+    #{$self}__button {
+      width: 125px;
+      height: 45px;
+    }
+  }
+
+  &--disabled {
+    #{$self}__button {
+      background-color: transparent;
+      border: 2px solid $neutral-elements-03;
+      color: $neutral-elements-03 !important;
+      cursor: none;
+      pointer-events: none;
+
+      &::after {
+        content: "";
+        animation: none;
+        border-top-color: $neutral-elements-03 !important;
+        border-bottom-color: $neutral-elements-03 !important;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,123 @@
+@import "../../styles/tokens.scss";
+
+.ts-button-toggle {
+  $self: &;
+  font-family: $font-family-01;
+  font-size: $font-size-xs;
+  color: $contrast-color-brand;
+
+  &__label-text {
+    margin-left: 2px;
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-width: max-content;
+    padding: $spacing-size-xxxs;
+    padding-left: 0;
+  }
+
+  &__button {
+    @include motion-token(switch-slow, "&:hover");
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    margin-right: 8px;
+    border: 2px solid $brand-color-pink-01;
+    background-color: transparent;
+    border-radius: $border-radius-pill;
+
+    &::after {
+      content: "";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $brand-color-pink-01;
+      border-radius: $border-radius-circular;
+      width: 12px;
+      height: 12px;
+    }
+
+    &:hover {
+      background-color: $brand-color-pink-01;
+
+      &::after {
+        background-color: $neutral-elements-01;
+      }
+    }
+  }
+
+  &__state-label {
+    font-family: $font-family-02;
+  }
+
+  &--checked {
+    #{$self}__button {
+      background-color: $brand-color-pink-01;
+
+      &::after {
+        background-color: $neutral-elements-01;
+        transform: translateX(1.5rem);
+        animation: pulse 0.5s;
+
+        @keyframes pulse {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(1.5rem);
+          }
+          100% {
+            transform: translateX(1.5rem);
+          }
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    color: $contrast-color-brand !important;
+    filter: opacity(0.5);
+    #{$self}__button {
+      background-color: $neutral-elements-01 !important;
+      border: 2px solid $neutral-elements-03 !important;
+
+      &::after {
+        background-color: $neutral-elements-03 !important;
+        animation: none;
+      }
+    }
+
+    #{$self}__state-label {
+      color: $contrast-color-brand !important;
+    }
+  }
+
+  &--inverse {
+    color: $neutral-elements-01;
+    
+    #{$self}__button {
+      background-color: transparent;
+      border: 2px solid $brand-color-blue-pure;
+
+      &::after {
+        background-color: $brand-color-blue-pure;
+      }
+    }
+
+    &.ts-button-toggle--checked {
+      #{$self}__button {
+        background-color: $brand-color-blue-pure;
+
+        &::after {
+          background-color: $neutral-elements-01;
+        }
+      }
+    }
+  }
+}

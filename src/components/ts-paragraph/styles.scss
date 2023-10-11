@@ -1,0 +1,19 @@
+@import '../../styles/tokens.scss';
+
+.ts-paragraph {
+    @include motion-token(switch-slow, '&--inverse'); 
+    font-family: $font-family-02;
+    font-size: $font-size-xs;
+    color: $contrast-color-brand;
+    word-break: break-word;
+  
+    &--inverse {
+      color: $neutral-elements-01;
+    }
+  }
+  
+  @media screen and (min-width: 600px) {
+      .ts-paragraph{
+         font-size: $font-size-sm;
+      }
+    }

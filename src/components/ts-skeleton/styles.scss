@@ -1,0 +1,46 @@
+@import "../../styles/tokens.scss";
+
+.ts-skeleton {
+  $self: &;
+  font-family: $font-family-02;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: $spacing-size-xxxs;
+
+  &--flex-column {
+    flex-direction: column;
+  }
+
+  &--justify-content--center {
+    justify-content: center;
+  }
+
+  &--justify-content--space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-content--space-around {
+    justify-content: space-around;
+  }
+
+  &--justify-content--flex-start {
+    justify-content: flex-start;
+  }
+
+  &--justify-content--flex-end {
+    justify-content: flex-end;
+  }
+
+  &--align-items--center {
+    align-items: center;
+  }
+
+  &--align-items--flex-start {
+    align-items: flex-start;
+  }
+
+  &--align-items--flex-end {
+    align-items: flex-end;
+  }
+}

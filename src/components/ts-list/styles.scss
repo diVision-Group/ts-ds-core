@@ -1,0 +1,13 @@
+@import "../../styles/tokens.scss";
+
+.ts-list {
+  $self: &;
+
+  &--inverse {
+    .ts-list__list {
+      & li {
+        color: $neutral-elements-pure;
+      }
+    }
+  }
+}

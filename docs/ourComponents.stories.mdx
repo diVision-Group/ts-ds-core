@@ -1,0 +1,73 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import link from "@transdevoficial/ds-assets/dist/assets/icons/link.js";
+import heart from "@transdevoficial/ds-assets/dist/assets/icons/heart_filled";
+import listOfComponents from "./listOfComponents.js";
+import tableOfComponents from "./tableOfComponents.js";
+import check from "@transdevoficial/ds-assets/dist/assets/icons/check.js";
+
+<Meta title="Introduction/Our Components" />
+
+<div id="header">
+  <ts-heading level="h2" label="Nossos Componentes" />
+  <ts-subtitle label="Temos um grande conjunto de componentes para você usar" />
+</div>
+<hr></hr>
+
+<div id="summary">
+  <ts-heading level="h3" label="Sumário:" />
+  <ts-list>
+    <ts-list-item>
+      <ts-link
+        label="Lista de Componentes"
+        link="#list-of-components"
+        with-icon
+        icon-src={link}
+      />
+    </ts-list-item>
+  </ts-list>
+</div>
+<hr></hr>
+
+<div>
+  <ts-heading level="h3" label="Estado dos Componentes" />
+  <ts-subtitle label="Estamos trabalhando em todos os componentes para que você possa usá-los" />
+  <br></br>
+  <div style={{display: 'flex'}}>
+  <ts-subtitle label="Agradecemos a sua colaboração" />
+  <ts-icon src={heart} size="small" />
+  </div>
+  <br></br>
+
+  <ts-list>
+    <ts-list-item style={{ display: 'flex', alignItems: 'center'}}>
+      <ts-subtitle label="Não implementados" />
+      <ts-icon size="small" color='grey' />
+    </ts-list-item>
+    <ts-list-item style={{ display: 'flex', alignItems: 'center'}}>
+      <ts-subtitle label="Em desenvolvimento" />
+      <ts-icon size="small" color='orange' />
+    </ts-list-item>
+    <ts-list-item style={{ display: 'flex', alignItems: 'center'}}>
+      <ts-subtitle label="Implementados" />
+      <ts-icon size="small" color='green' />
+    </ts-list-item>
+    <ts-list-item style={{ display: 'flex', alignItems: 'center'}}>
+      <ts-subtitle label="Em análise" />
+      <ts-icon size="small" color='darkcyan' />
+    </ts-list-item>
+    <ts-list-item style={{ display: 'flex', alignItems: 'center'}}>
+      <ts-subtitle label="Depreciados" />
+      <ts-icon size="small" color='darkred' />
+    </ts-list-item>
+  </ts-list>
+  <br></br>
+
+
+  <table-of-components></table-of-components>
+
+</div>
+
+<div id="list-of-components">
+  <ts-heading level="h3" label="Lista de Componentes" />
+  <list-of-components></list-of-components>
+</div>

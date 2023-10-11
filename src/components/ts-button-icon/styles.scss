@@ -1,0 +1,294 @@
+@import "../../styles/tokens.scss";
+
+.ts-button-icon {
+  $self: &;
+  font-family: $font-family-01, sans-serif !important;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    @include motion-token(switch-slow, "&:hover");
+  }
+
+  &--primary {
+    color: $brand-color-pink-02;
+    #{$self}__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $brand-color-pink-02;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+
+      ts-icon::part(icon) {
+        margin-top: 5px;
+        color: $brand-color-pink-02;
+      }
+
+      &:hover {
+        border: none;
+        background-color: $brand-color-pink-01;
+        cursor: pointer;
+
+        ts-icon::part(icon) {
+          color: $neutral-elements-01;
+        }
+      }
+
+      &--inverse {
+        background-color: $brand-color-blue-pure;
+        border: none;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: $brand-color-blue-pure !important;
+        }
+        
+        &:hover {
+          background-color: $brand-color-blue-01;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &--secondary {
+    color: $brand-color-blue-01 !important;
+    #{$self}__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $brand-color-blue-01;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+
+      ts-icon::part(icon) {
+        margin-top: 5px;
+        color: $brand-color-blue-01;
+      }
+
+      &:hover {
+        border: none;
+        background-color: $brand-color-blue-pure;
+        cursor: pointer;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-01;
+        }
+      }
+
+      &--inverse {
+        background-color: $brand-color-pink-01;
+        border: none;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: $brand-color-pink-01 !important;
+        }
+
+        &:hover {
+          background-color: $brand-color-pink-pure;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &--danger {
+    color: $feedback-color-warning-01 !important;
+    #{$self}__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $feedback-color-warning-01;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+
+      ts-icon::part(icon) {
+        margin-top: 5px;
+        color: $feedback-color-warning-01;
+      }
+
+      &:hover {
+        border: none;
+        background-color: $feedback-color-warning-pure;
+        cursor: pointer;
+
+        ts-icon::part(icon) {
+          color: $neutral-elements-01;
+        }
+      }
+
+      &--inverse {
+        background-color: $feedback-color-warning-pure;
+        border: none;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: $neutral-elements-02;
+        }
+
+        &:hover {
+          background-color: $feedback-color-warning-01;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &--success {
+    color: $feedback-color-success-02 !important;
+    #{$self}__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $feedback-color-success-01;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+
+      ts-icon::part(icon) {
+        margin-top: 5px;
+        color: $feedback-color-success-01;
+      }
+
+      &:hover {
+        border: none;
+        background-color: $feedback-color-success-pure;
+        cursor: pointer;
+
+        ts-icon::part(icon) {
+          color: $neutral-elements-01;
+        }
+      }
+
+      &--inverse {
+        background-color: $feedback-color-success-pure;
+        border: none;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: $feedback-color-success-pure !important;
+        }
+
+        &:hover {
+          background-color: $feedback-color-success-01;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &--warning {
+    color: darkred !important;
+    #{$self}__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid orangered;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+
+      ts-icon::part(icon) {
+        margin-top: 5px;
+        color: orangered;
+      }
+
+      &:hover {
+        border: none;
+        background-color: darkorange;
+        cursor: pointer;
+
+        ts-icon::part(icon) {
+          color: $neutral-elements-01;
+        }
+      }
+
+      &--inverse {
+        background-color: darkorange;
+        border: none;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: darkorange !important;
+        }
+
+        &:hover {
+          background-color: orangered;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &--small {
+    font-size: $font-size-xxxs;
+    #{$self}__button {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &--medium {
+    font-size: $font-size-xxs;
+    #{$self}__button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &--large {
+    font-size: $font-size-xs;
+    #{$self}__button {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  &--labeled {
+    #{$self}__button {
+      margin-right: $spacing-size-xxxs;
+    }
+  }
+
+  &--disabled {
+    #{$self}__button {
+      border: 2px solid $neutral-elements-03;
+      background-color: transparent;
+      cursor: none;
+      pointer-events: none;
+
+      ts-icon::part(icon) {
+        color: $neutral-elements-03;
+      }
+
+      & ~ .ts-button-icon__label {
+        color: $neutral-elements-03 !important;
+      }
+    }
+  }
+}

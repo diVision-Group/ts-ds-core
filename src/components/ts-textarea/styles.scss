@@ -1,0 +1,69 @@
+@import "../../styles/tokens.scss";
+
+.ts-textarea {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-size-xxxs;
+  color: $contrast-color-brand;
+
+  &__label {
+    font-size: $font-size-xs;
+    font-family: $font-family-01;
+  }
+
+  &__info-message {
+    font-size: $font-size-xxxs;
+    font-family: $font-family-02;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background-color: $neutral-elements-01;
+    padding: $spacing-size-xxxs;
+    font-family: $font-family-02;
+    outline: none;
+    border-radius: $border-radius-sm;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $neutral-elements-02;
+      &::placeholder {
+        color: $contrast-color-brand;
+      }
+    }
+  }
+
+  &__count {
+      font-weight: bolder;
+
+      &--orange {
+        color: orangered;
+      }
+  }
+
+  &__count--red {
+      color: $feedback-color-warning-01;
+  }
+
+  &--disabled {
+    color: $neutral-elements-03 !important;
+    pointer-events: none;
+
+    #{$self}__input::placeholder {
+      color: $neutral-elements-02 !important;
+    }
+  }
+
+  &--inverse {
+    color: $neutral-elements-01;
+  }
+}

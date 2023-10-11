@@ -1,0 +1,103 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import brand from "@transdevoficial/ds-assets/dist/assets/brand/transdev_positivo.js";
+import link from "@transdevoficial/ds-assets/dist/assets/icons/link.js";
+
+<Meta title="Introduction/Overview" />
+
+<p align="center">
+  <ts-brand src={brand} size="small" />
+  <ts-heading level="h2" label="TransDev Design System" />
+  <ts-subtitle label="Uma coleção de componentes para desenvolvimento de interfaces de usuário" />
+</p>
+<hr></hr>
+
+<div id="summary">
+  <ts-heading level="h3" label="Sumário:" />
+  <ul>
+    <li>
+      <ts-link
+        label="Get Started"
+        link="#get_started"
+        with-icon
+        icon-src={link}/>
+    </li>
+    <li>
+      <ts-link 
+        label="Basic Usage" 
+        link="#basic_usage" 
+        with-icon icon-src={link} />
+    </li>
+    <li>
+      <ts-link 
+        label="Examples" 
+        link="#examples" 
+        with-icon icon-src={link} />
+    </li>
+    <li>
+      <ts-link 
+        label="Related" 
+        link="#related" 
+        with-icon icon-src={link} />
+    </li>
+  </ul>
+</div>
+<hr></hr>
+
+<div id="ts">
+  <ts-heading level="h2" label="TS" />
+  <ts-paragraph label="O TransDev Design System é uma coleção de componentes para desenvolvimento de interfaces de usuário. Construído de forma agnóstica, sem dependência com frameworks, e com o objetivo de ser utilizado por todas as pessoas desenvolvedoras." />
+</div>
+<hr></hr>
+
+<div id="get_started">
+  <ts-heading level="h2" label="Get Started" />
+  <ts-paragraph label="Para instalar o TransDev Design System, basta executar o comando abaixo:" />
+
+```bash
+npm i -D @transdevoficial/ts-ds-core
+```
+</div>
+
+<div id="basic_usage">
+  <ts-heading level="h2" label="Basic Usage" />
+  <ts-paragraph label="Para utilizar o TransDev Design System, basta importar algum dos nossos componentes no seu projeto. Exemplo:" />
+
+```javascript
+import '@transdevoficial/ts-ds-core/dist/components/${componentName}';
+```
+
+  <ts-paragraph label="E usar como um elemento HTML. Veja o exemplo:" />
+
+```html
+<${componentName} />
+```
+</div>
+<hr></hr>
+
+<div id="examples">
+  <ts-heading level="h2" label="Examples" />
+  <ts-paragraph label="Veja alguns exemplos:" />
+
+```javascript
+import '@transdevoficial/ts-ds-core/dist/components/ts-button';
+```
+
+```html
+<ts-button label="Click me!" />
+```
+<ts-paragraph label="Resultado:" />
+<ts-button label="Click me!" />
+</div>
+<hr></hr>
+
+<div id="related">
+  <ts-heading level="h2" label="Related" />
+  <ul>
+    <li>
+      <ts-link 
+        label="Nossos Componentes" 
+        link="?path=/story/introduction-our-components--page" 
+        with-icon icon-src={link} />
+    </li>
+  </ul>
+</div>

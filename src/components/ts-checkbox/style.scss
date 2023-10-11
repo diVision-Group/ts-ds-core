@@ -1,0 +1,141 @@
+@import "../../styles/tokens.scss";
+
+.ts-checkbox {
+  $self: &;
+  font-family: $font-family-01, sans-serif !important;
+  font-size: $font-size-xxs;
+  width: fit-content;
+
+  &--disabled {
+    pointer-events: none !important;
+    .checkmark {
+      border-color: $neutral-elements-03 !important;
+
+      ts-icon::part(icon) {
+        color: $neutral-elements-03;
+      }
+    }
+
+    span {
+      color: $neutral-elements-03 !important;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2.1%;
+    top: 7.8%;
+    display: none;
+
+    &:hover {
+      & ~ span {
+        color: $brand-color-pink-02;
+      }
+
+      & ~ .checkmark {
+        border-color: $brand-color-pink-02;
+
+        & ts-icon::part(icon) {
+          color: $brand-color-pink-02;
+        }
+      }
+    }
+  }
+
+  .checkmark {
+    @include motion-token(switch-slow, "&:hover");
+    width: 20px;
+    height: 20px;
+    border: 2px solid $contrast-color-brand;
+    display: block;
+  }
+
+  span {
+    @include motion-token(switch-slow, "&:hover");
+    margin-left: $spacing-size-xxxs;
+  }
+
+  #{$self}__input:checked,
+  #{$self}__input[checked] {
+    & ~ span {
+      color: $brand-color-pink-02;
+    }
+
+    & ~ .checkmark {
+      background-color: $brand-color-pink-02;
+      border: 2px solid transparent;
+
+      & ts-icon::part(icon) {
+        color: $neutral-elements-01;
+      }
+    }
+  }
+
+  #{$self}__input:checked:disabled,
+  #{$self}__input:checked[disabled] {
+    & ~ .checkmark {
+      background-color: $neutral-elements-03 !important;
+    }
+  }
+
+  &--inverse {
+    .checkmark {
+      border-color: $neutral-elements-pure;
+      & ts-icon::part(icon) {
+        color: $neutral-elements-pure;
+      }
+    }
+
+    span {
+      color: $neutral-elements-pure;
+    }
+
+    #{$self}__input:hover {
+      & ~ span {
+        color: $brand-color-blue-pure;
+      }
+
+      & ~ .checkmark {
+        border-color: $brand-color-blue-pure;
+        & ts-icon::part(icon) {
+          color: $brand-color-blue-pure;
+        }
+      }
+    }
+
+    #{$self}__input:checked,
+    #{$self}__input[checked] {
+      & ~ span {
+        color: $brand-color-blue-pure;
+      }
+
+      & ~ .checkmark {
+        background-color: $brand-color-blue-pure;
+        border: 2px solid transparent;
+
+        & ts-icon::part(icon) {
+          color: $brand-color-blue-02;
+        }
+      }
+    }
+
+    #{$self}__input:checked:disabled,
+    #{$self}__input:checked[disabled] {
+      & ~ .checkmark {
+        background-color: $neutral-elements-03;
+        border: 2px solid transparent;
+
+        & ts-icon::part(icon) {
+          color: $neutral-elements-01;
+        }
+      }
+    }
+  }
+}

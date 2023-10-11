@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link href="http://fonts.cdnfonts.com/css/sifonn" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="tokens/globals.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="tokens/transdev/tema-1/light.css"
+    />
+    <style>
+      h1 {
+        font-family: 'Sifonn', sans-serif;
+      }
+
+      .section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Temos Buttons</h1>
+    <ts-paragraph label="Primary | Secondary | Loading | Secondary+Loading | Loading+Disabled | Disabled"></ts-paragraph>
+    <div class="section">
+      <ts-button></ts-button>
+      <ts-button variant="secondary"></ts-button>
+      <ts-button loading></ts-button>
+      <ts-button variant="secondary" loading></ts-button>
+      <ts-button disabled loading></ts-button>
+      <ts-button disabled></ts-button>
+    </div>
+    <h1>Na versão inverse também</h1>
+    <ts-paragraph label="Primary | Secondary | Loading | Secondary+Loading"></ts-paragraph>
+    <div class="section">
+      <ts-button inverse></ts-button>
+      <ts-button variant="secondary" inverse></ts-button>
+      <ts-button loading inverse></ts-button>
+      <ts-button variant="secondary" loading inverse></ts-button>
+    </div>
+    <h1>Também temos outras formas</h1>
+    <ts-paragraph label="Flat | Rounded"></ts-paragraph>
+    <div class="section">
+      <ts-button></ts-button>
+      <ts-button format="rounded"></ts-button>
+      <ts-button variant="secondary"></ts-button>
+      <ts-button variant="secondary" format="rounded"></ts-button>
+      <ts-button inverse></ts-button>
+      <ts-button format="rounded" inverse></ts-button>
+      <ts-button variant="secondary" inverse></ts-button>
+      <ts-button variant="secondary" format="rounded" inverse></ts-button>
+    </div>
+    <h1>Que tal outras opções?</h1>
+    <ts-paragraph label="Danger | Success | Warning"></ts-paragraph>
+    <div class="section">
+      <ts-button variant="danger" label="Danger"></ts-button>
+      <ts-button variant="success" label="Success"></ts-button>
+      <ts-button variant="warning" label="Warning"></ts-button>
+    </div>
+  </body>
+    <h1>E um button group?</h1>
+    <ts-paragraph label="Default | Inverse"></ts-paragraph>
+    <div class="section">
+      <div style="padding: 10px;">
+        <ts-button-group></ts-button-group>
+      </div>
+      <div style="background-color: #202020; padding: 10px;">
+        <ts-button-group inverse></ts-button-group>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+@import "../../../styles/tokens.scss";
+
+.ts-skeleton-item {
+  background-color: $neutral-elements-02;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      to left,
+      $neutral-elements-02,
+      $neutral-elements-03,
+      $neutral-elements-02
+    );
+    animation: slide 1s infinite;
+  }
+
+  &--rounded {
+    border-radius: $border-radius-md;
+  }
+
+  &--circular {
+    border-radius: $border-radius-circular;
+  }
+}
+
+@keyframes slide {
+  100% {
+    transform: translateX(100%);
+  }
+}

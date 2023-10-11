@@ -1,0 +1,58 @@
+@import "../../styles/tokens.scss";
+
+.ts-link {
+  $self: &;
+  font-size: $font-size-xs;
+  font-family: $font-family-01;
+  width: 100%;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+    color: $contrast-color-brand;
+    text-decoration: none;
+    cursor: pointer;
+    @include motion-token(switch-slow, "&:hover");
+
+    &:hover {
+      color: $contrast-color-focus;
+      text-decoration: underline;
+      ts-icon::part(icon) {
+        color: $contrast-color-focus;
+      }
+    }
+  }
+
+  &--inverse {
+    #{$self}__link {
+      color: $neutral-elements-pure;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $brand-color-blue-pure;
+        text-decoration: underline;
+
+        ts-icon::part(icon) {
+          color: $brand-color-blue-pure;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    #{$self}__link {
+      filter: opacity(0.5);
+      color: $contrast-color-brand;
+      text-decoration: none;
+      pointer-events: none;
+
+      ts-icon::part(icon) {
+        color: $contrast-color-brand;
+      }
+    }
+  }
+}

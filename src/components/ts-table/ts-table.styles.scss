@@ -1,0 +1,68 @@
+@import "../../styles/tokens.scss";
+
+.ts-table {
+  $self: &;
+  outline: 2px solid $contrast-color-brand;
+  font-family: $font-family-01;
+  font-size: small;
+  border-radius: $border-radius-sm;
+  width: min-content;
+
+  & thead,
+  tbody {
+    display: block;
+
+    & tr {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  & th {
+    @include motion-token(switch-slow, "&:hover");
+    padding: 1rem;
+    border-bottom: 1px solid $contrast-color-brand;
+    color: $neutral-elements-pure;
+    background-color: $brand-color-pink-02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &:first-child {
+      border-top-left-radius: $border-radius-sm;
+    }
+
+    &:last-child {
+      border-top-right-radius: $border-radius-sm;
+    }
+
+    &:hover {
+      background-color: $brand-color-pink-pure;
+      color: $brand-color-blue-02;
+    }
+  }
+
+  td {
+    @include motion-token(switch-slow, "&:hover");
+    padding: 1.5rem;
+    font-family: $font-family-02;
+    color: $contrast-color-brand;
+    border-bottom: 1px solid $contrast-color-brand;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 115px;
+    word-break: break-word;
+
+    &:hover {
+      background-color: $neutral-elements-01;
+    }
+  }
+
+  tr:last-child td {
+    border: none;
+  }
+}

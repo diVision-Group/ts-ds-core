@@ -1,0 +1,45 @@
+@import "../../styles/tokens.scss";
+
+.ts-brand {
+  $self: &;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $neutral-surface-pure;
+
+  svg {
+    width: 95%;
+    height: 95%;
+  }
+
+  &--small {
+    width: 150px;
+    height: 150px;
+  }
+
+  &--medium {
+    width: 250px;
+    height: 250px;
+  }
+
+  &--large {
+    width: 350px;
+    height: 350px;
+  }
+
+  &--inverse {
+    border: 2px solid $neutral-elements-01;
+  }
+
+  &--flat {
+    border-radius: 0;
+  }
+
+  &--rounded {
+    border-radius: $border-radius-lg;
+  }
+
+  &--circular {
+    border-radius: $border-radius-circular;
+  }
+}
